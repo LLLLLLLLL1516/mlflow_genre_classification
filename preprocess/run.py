@@ -27,6 +27,7 @@ def go(args):
 
     # A minimal feature engineering step: a new feature
     logger.info("Feature engineering")
+    df['loudness'].fillna(value=0.01, inplace=True)
     df['title'].fillna(value='', inplace=True)
     df['song_name'].fillna(value='', inplace=True)
     df['text_feature'] = df['title'] + ' ' + df['song_name']
